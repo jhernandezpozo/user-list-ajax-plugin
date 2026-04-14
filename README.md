@@ -31,31 +31,6 @@ Este proyecto consiste en el desarrollo de un plugin de WordPress que implementa
     - Permite aplicar filtros y paginación
     - Devuelve datos en formato JSON
 
-## Estructura del proyecto
-user-list-ajax/
-
-├── assets/
-
-│   ├── js/
-
-│   │   └── user-ajax.js
-
-│   └── css/
-
-│       └── style.css
-
-├── BBDD/ (bbdd.sql) 
-
-├── includes/
-
-│   └── api-simulator.php
-
-├── user-list-ajax.php (Archivo principal)
-
-└── .gitignore
-
-└── README.md
-
 ## Seguridad y Buenas Prácticas
 
 Este proyecto sigue los estándares de desarrollo de WordPress para garantizar la integridad de los datos y la seguridad del sitio:
