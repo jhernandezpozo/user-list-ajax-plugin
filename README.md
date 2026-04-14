@@ -18,18 +18,18 @@ Para el desarrollo y visualización de los resultados se usó un usuario de WP (
 - WordPress 6.0+
 - PHP 8.0+
 
-- ## Descripción
+## Descripción
 Este proyecto consiste en el desarrollo de un plugin de WordPress que implementa un módulo para mostrar un listado de usuarios con las siguientes características:
 1. Listado paginado (5 usuarios por página)
 2. Filtro por:
-  - Nombre
-  - Apellidos
-  - Email
+    - Nombre
+    - Apellidos
+    - Email
 3. Actualización dinámica mediante AJAX (sin recarga de página)
 4. Simulación de una API externa:
-  - Genera usuarios dinámicamente
-  - Permite aplicar filtros y paginación
-  - Devuelve datos en formato JSON
+    - Genera usuarios dinámicamente
+    - Permite aplicar filtros y paginación
+    - Devuelve datos en formato JSON
 
 ## Estructura del proyecto
 user-list-ajax/
@@ -48,10 +48,15 @@ user-list-ajax/
 ## Seguridad y Buenas Prácticas
 
 Este proyecto sigue los estándares de desarrollo de WordPress para garantizar la integridad de los datos y la seguridad del sitio:
+
 **Verificación de Nonces:** Se implementó un token de seguridad (nonce) mediante `wp_create_nonce` y `check_ajax_referer` para prevenir ataques de falsificación de solicitudes entre sitios (CSRF) en todas las llamadas AJAX.
+
 **Sanitización de Entradas:** Todos los datos recibidos desde el formulario de búsqueda se limpian antes de ser procesados utilizando `sanitize_text_field()` y `sanitize_email()`.
+
 **Escapado de Salida:** Para prevenir ataques XSS (Cross-Site Scripting), toda la información mostrada en la tabla de usuarios se escapa en el momento de la impresión usando `esc_html()` y `printf()`.
+
 **Restricción de Acceso Directo:** El archivo principal del plugin incluye una comprobación de seguridad `defined('ABSPATH') || exit;` para evitar la ejecución directa de scripts desde el navegador.
+
 **Prevención de Inyección de Código:** Al no utilizar SQL directo y procesar la información de forma programada mediante PHP puro, se elimina el riesgo de inyecciones SQL en la visualización del listado.
 
 ## Autor Josue Ernesto Hernández Pozo
