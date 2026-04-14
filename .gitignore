@@ -1,0 +1,9 @@
+# WordPress core
+wp-config.php
+wp-content/themes/twentytwentyfour/
+index.php
+.htaccess
+
+# Desarrollo
+node_modules/
+.DS_Store
