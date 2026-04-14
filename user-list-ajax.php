@@ -83,7 +83,7 @@ function ula_render_user_table($data, $current_page) {
     echo '<thead><tr><th>Usuario</th><th>Nombre</th><th>Apellido 1</th><th>Apellido 2</th><th>Email</th></tr></thead>';
     echo '<tbody>';
     foreach ($data['usuarios'] as $u) {
-        // Escapar datos para salida segura [cite: 3]
+        // Escapar datos para salida segura
         printf('<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>',
             esc_html($u['name']),
             esc_html($u['name']),
