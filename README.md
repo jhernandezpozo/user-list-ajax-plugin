@@ -8,7 +8,7 @@ Este plugin genera un listado de usuarios consumiendo una API simulada con filtr
 3. Activar el plugin desde el panel de administración.
 4. Usar el shortcode "[listado_usuarios]" en cualquier página.
 
-## Base de Datos
+## Base de Datos (Solo informativo, no es requisito para el uso del plugin)
 Para el desarrollo y visualización de los resultados se usó un usuario de WP (registrado en bbdd.sql) cuyas credenciales son las siguientes:
 1. User: admin
 2. Password: admin123*
