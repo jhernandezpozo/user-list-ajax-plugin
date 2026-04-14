@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) exit;
  * @return array Estructura de datos con el listado de usuarios y el total para paginación.
  */
 function ula_simulate_api_call($params) {
-    // 1. Generamos una base de datos ficticia de usuarios [cite: 8, 9]
+    // 1. Generamos una base de datos ficticia de usuarios
     $todos_los_usuarios = [];
     for ($i = 1; $i <= 18; $i++) {
         $todos_los_usuarios[] = [
@@ -24,7 +24,7 @@ function ula_simulate_api_call($params) {
         ];
     }
 
-    // 2. Aplicamos el filtrado (Simulando la lógica del servidor API) [cite: 4, 5]
+    // 2. Aplicamos el filtrado (Simulando la lógica del servidor API)
     $usuarios_filtrados = array_filter($todos_los_usuarios, function($u) use ($params) {
         $match = true;
 
@@ -44,7 +44,7 @@ function ula_simulate_api_call($params) {
         return $match;
     });
 
-    // 3. Lógica de Paginación (5 usuarios por página) [cite: 2, 6]
+    // 3. Lógica de Paginación (5 usuarios por página)
     $por_pagina = 5;
     $total_usuarios = count($usuarios_filtrados);
     $pagina_actual = max(1, $params['pagina']);
@@ -53,7 +53,7 @@ function ula_simulate_api_call($params) {
     // Extraemos solo el trozo (slice) que corresponde a la página actual
     $usuarios_paginados = array_slice($usuarios_filtrados, $offset, $por_pagina);
 
-    // 4. Devolvemos el formato JSON esperado [cite: 8, 32, 33]
+    // 4. Devolvemos el formato JSON esperado 
     return [
         "usuarios" => $usuarios_paginados,
         "total"    => $total_usuarios // Dato extra necesario para calcular el número de botones en el frontend
